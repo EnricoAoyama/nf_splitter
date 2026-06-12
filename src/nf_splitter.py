@@ -19,7 +19,7 @@ def pg_count(arquivos): # contador de páginas dentro do diretório
         pg += len(doc.pages)
     return pg
 
-def pdf_splitter(dir_entrada,dir_saida):
+def doc_splitter(dir_entrada,dir_saida):
     """
  descrição
     """
@@ -44,12 +44,14 @@ def pdf_splitter(dir_entrada,dir_saida):
     for f in pdfs:
         pdf = PdfReader(f)
 
+        teste = 0
         # olha cada página dentro do documento
         for pagina in pdf.pages:
             writer = PdfWriter()
             writer.add_page(pagina)
 
-            nf = loc_nnf(1) # a terminar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            nf = loc_nnf(teste) # a terminar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            teste +=1
 
             arquivo_saida = dir_saida / f"{nf}.pdf"
 
@@ -74,4 +76,4 @@ if __name__ == '__main__':
     saida = path.parent / "data" / "out_NFs"
     saida.mkdir(parents=True, exist_ok=True)
 
-    pdf_splitter(entrada,saida)
+    doc_splitter(entrada,saida)
