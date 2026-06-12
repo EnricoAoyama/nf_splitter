@@ -11,25 +11,37 @@ Ferramenta em Python para processar PDFs contendo múltiplas DANFEs, identificar
 
 ## Tecnologias
 - Python
-- pypdf
+  - pypdf
+  - pytest
 - regex
 
 ## Instalação
 pip install -r requirements.txt
 
 ## Uso
-python src/main.py
+python src/nf_splitter.py
+
 ## Estrutura esperada
+```text
+data/
+├── in_PDFs/
+│   └── notas.pdf
+└── out_NFs/
+```
 
-in/
-out/
+### Fluxo de execução
 
-## Exemplo
+```text
+in_PDFs/notas.pdf (3 páginas)
 
-Entrada:
-lote.pdf
+          ↓
 
-Saída:
-000004726.pdf
-000085034.pdf
-000002913.pdf
+     nf_splitter
+
+          ↓
+
+out_NFs/
+├── 000004726.pdf
+├── 000085034.pdf
+└── 000002913.pdf
+```
