@@ -1,0 +1,15 @@
+# Ambiente virtual
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# PDFs de entrada e saída
+data/
+
+# Logs
+*.log
