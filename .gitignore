@@ -13,3 +13,6 @@ data/
 
 # Logs
 *.log
+
+# pytest
+.pytest_cache/
